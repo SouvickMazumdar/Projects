@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+void func(int t ,int x, int n, int ar[])
+{
+    int tot=x*t;
+    double sr[n];
+ for(int i=0;i<n;i++)
+ {
+     int r=ar[i];
+     double sa=4*3.14*r*r;
+     sr[i]=sa;
+     
+ }
+ sort(sr,sr+n);
+ int count=0;
+ for(int i=0;i<n;i++)
+ {
+     if(tot>=sr[i]){count++;tot-=sr[i];}
+     else
+     break;
+ }
+ cout<<count<<endl;
+}
+int main()
+{
+   int t;
+   cin>>t;
+   while(t--)
+   {
+       int t,x,n;
+       cin>>t>>x>>n;
+       int ar[n];
+       for(int i=0;i<n;i++)
+       cin>>ar[i];
+       func(t,x,n,ar);
+   }
+    return 0;
+}
