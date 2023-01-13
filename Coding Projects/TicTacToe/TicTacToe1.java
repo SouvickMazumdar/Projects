@@ -203,7 +203,7 @@ class TicTacToe1
         }
         System.out.println("Lets have the toss");int w=0;
         for(int kj=0;kj<5000000;kj++)
-        {for(int gh=0;gh<500;gh++)
+        {for(int gh=0;gh<5000;gh++)
             {}
         }
             if ((int)(Math.random()*10)%2==0)
@@ -217,8 +217,16 @@ class TicTacToe1
         while(true)
         {  
             if(w==0)
-            {   int r=ob.row();
-                int e=ob.column();
+            {  
+                int r,e;
+                while(true)
+                {
+                    r=ob.row();
+                    e=ob.column();
+                    if(a[r-1][e-1]==" ")break;
+                    else
+                    System.out.println("Space is already taken!! Enter again:::");
+                }
                 a[r-1][e-1]="X";c=c+1;
                 if(ob.check("X")==1)
                 {ob.show();
@@ -370,11 +378,21 @@ class TicTacToe1
                 
             }
             if(w==1)
-            {System.out.print("Enter the row= ");
-            int r2=Integer.parseInt(br.readLine());
-            System.out.println();
-            System.out.print("Enter the coloumn= ");
-            int c2=Integer.parseInt(br.readLine());
+            {
+                int r2,c2;
+                while(true)
+                {
+                     r2=ob.row();
+                     c2=ob.column();
+                    if(a[r2-1][c2-1]==" ")break;
+                    else
+                    System.out.println("Space is already taken!! Enter again:::");
+                }
+            //     System.out.print("Enter the row= ");
+            // int r2=Integer.parseInt(br.readLine());
+            // System.out.println();
+            // System.out.print("Enter the coloumn= ");
+            // int c2=Integer.parseInt(br.readLine());
             System.out.println();
             
             //int c2=Intger.parseInt(br.readLine());
@@ -394,13 +412,3 @@ class TicTacToe1
         
     }
 }
-            
-          
-          
-    
-
-        
-        
-        
-
-        
